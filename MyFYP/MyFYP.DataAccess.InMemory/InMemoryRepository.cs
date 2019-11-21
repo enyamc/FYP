@@ -1,4 +1,5 @@
-﻿using MyFYP.Core.Models;
+﻿using MyFYP.Core.Contracts;
+using MyFYP.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace MyFYP.DataAccess.InMemory
 {
     //<> makes class generic
-    public class InMemoryRepository<T> where T : BaseEntity
+    public class InMemoryRepository<T> : IRepository<T> where T : BaseEntity
     {
         ObjectCache cache = MemoryCache.Default;
         List<T> items;
@@ -19,7 +20,7 @@ namespace MyFYP.DataAccess.InMemory
         {
             className = typeof(T).Name;
             items = cache[className] as List<T>;
-            if(items==null)
+            if (items == null)
             {
                 items = new List<T>();
             }
@@ -30,12 +31,12 @@ namespace MyFYP.DataAccess.InMemory
             cache[className] = items;
         }
 
-        public void Insert (T t)
+        public void Insert(T t)
         {
             items.Add(t);
         }
 
-        public void Update (T t)
+        public void Update(T t)
         {
             T tToUpdate = items.Find(i => i.Id == t.Id);
 

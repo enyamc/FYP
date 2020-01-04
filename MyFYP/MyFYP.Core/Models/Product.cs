@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyFYP.Core.Models
 {
+    //Adapted from -https://www.udemy.com/course/better-web-development-pro-techniques-for-success/learn/lecture/8533944?start=975#overview
     public class Product : BaseEntity
     {
         

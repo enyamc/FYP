@@ -1,5 +1,6 @@
 ﻿@model MyFYP.Core.ViewModels.ProductManagerViewModel
-
+<!--     //Adapted from -https://www.udemy.com/course/better-web-development-pro-techniques-for-success/learn/lecture/8533944?start=975#overview
+-->
 @{
     ViewBag.Title = "Create";
 }
@@ -10,7 +11,7 @@
 @using (Html.BeginForm("Create", "ProductManager", FormMethod.Post, new { encType = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Product</h4>
         <hr />
@@ -49,7 +50,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Product.Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-               <input type="file" id="file" name="file" class="form-control" />
+                <input type="file" id="file" name="file" class="form-control" />
             </div>
         </div>
 

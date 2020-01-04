@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<MyFYP.Core.Models.Product>
+<!--     //Adapted from -https://www.udemy.com/course/better-web-development-pro-techniques-for-success/learn/lecture/8533944?start=975#overview
+-->
 
 @{
     ViewBag.Title = "Index";
@@ -26,35 +28,36 @@
         <th>
             @Html.DisplayNameFor(model => model.Category)
         </th>
-        
+
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            <img class="img-thumbnail" style="height:50px" src="~/Content/ProductImages/@item.Image"/>
-        </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img class="img-thumbnail" style="height:50px" src="~/Content/ProductImages/@item.Image" />
+            </td>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category)
-        </td>
-       
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

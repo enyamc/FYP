@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace MyFYP.DataAccess.SQL
 {
+    //Adapted from -https://www.udemy.com/course/better-web-development-pro-techniques-for-success/learn/lecture/8533944?start=975#overview
+
     public class DataContext : DbContext
     {
         public DataContext()

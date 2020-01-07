@@ -1,5 +1,6 @@
 ﻿using MyFYP.Core.Contracts;
 using MyFYP.Core.Models;
+using MyFYP.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -111,6 +112,7 @@ namespace MyFYP.Services
 
             if (basket != null)
             {
+                //Inner join for basket item and product to create viewmodel
                 var results = (from b in basket.BasketItems
                                join p in productContext.Collection() on b.ProductId equals p.Id
                                select new BasketItemViewModel()
@@ -131,10 +133,10 @@ namespace MyFYP.Services
             }
         }
 
-        public BasketSummaryViewModel GetBacketSummary(HttpContextBase httpContext)
+        public BasketSummeryViewModel GetBacketSummary(HttpContextBase httpContext)
         {
             Basket basket = GetBasket(httpContext, false);
-            BasketSummaryViewModel model = new BasketSummaryViewModel(0, 0);
+            BasketSummeryViewModel model = new BasketSummeryViewModel(0, 0);
             if (basket != null)
             {
                 int? basketCount = (from item in basket.BasketItems

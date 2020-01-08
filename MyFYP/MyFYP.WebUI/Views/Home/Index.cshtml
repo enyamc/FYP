@@ -17,7 +17,6 @@
     </div>
 </div>
 <div class="col-md-10">
-
     <!-- Iterate and display all items in DB -->
     @foreach (var item in Model.Products)
     {
@@ -36,9 +35,13 @@
                 <h4>@item.Price</h4>
             </div>
             <div class="col-md-12">
-                <a href="#" class="btn btn-default">Add to Basket</a>
+                <a href="@Url.Action("AddToBasket", "Basket", new { Id = item.Id })" class="btn btn-default">Add to Basket</a>
             </div>
         </div>
+
     }
+</div>
+
+    
     <!-- Resets layout -->
     <div class="col-md-12 clearfix" />

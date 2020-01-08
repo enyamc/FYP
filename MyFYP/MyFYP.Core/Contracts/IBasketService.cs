@@ -13,6 +13,6 @@ namespace MyFYP.Core.Contracts
         void AddToBasket(HttpContextBase httpContext, string productId);
         void RemoveFromBasket(HttpContextBase httpContext, string itemId);
         List<BasketItemViewModel> GetBasketItems(HttpContextBase httpContext);
-        BasketSummeryViewModel GetBacketSummary(HttpContextBase httpContext);
+        BasketSummeryViewModel GetBasketSummary(HttpContextBase httpContext);
     }
 }

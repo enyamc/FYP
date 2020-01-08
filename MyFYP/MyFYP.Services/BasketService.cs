@@ -156,6 +156,11 @@ namespace MyFYP.Services
                 return model;
             }
         }
+
+        public BasketSummeryViewModel GetBasketSummary(HttpContextBase httpContext)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

@@ -20,19 +20,16 @@ namespace MyFYP.WebUI.Controllers
             productCategories = productCategoryContext;
         }
 
-        //Pass in a null category item if no category provided
-        public ActionResult Index(string Category=null)
+        public ActionResult Index(string Category = null)
         {
             List<Product> products;
             List<ProductCategory> categories = productCategories.Collection().ToList();
-            
-            if (Category==null)
+
+            if (Category == null)
             {
                 products = context.Collection().ToList();
             }
             else
-
-            //SQL statement to filter products 
             {
                 products = context.Collection().Where(p => p.Category == Category).ToList();
             }
@@ -57,8 +54,7 @@ namespace MyFYP.WebUI.Controllers
                 return View(product);
             }
         }
-            
-        
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

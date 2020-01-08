@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using MyFYP.Services;
 
 namespace MyFYP.Services
 {
@@ -133,7 +134,7 @@ namespace MyFYP.Services
             }
         }
 
-        public BasketSummeryViewModel GetBacketSummary(HttpContextBase httpContext)
+        public BasketSummeryViewModel GetBasketSummary(HttpContextBase httpContext)
         {
             Basket basket = GetBasket(httpContext, false);
             BasketSummeryViewModel model = new BasketSummeryViewModel(0, 0);
@@ -157,10 +158,7 @@ namespace MyFYP.Services
             }
         }
 
-        public BasketSummeryViewModel GetBasketSummary(HttpContextBase httpContext)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
 

@@ -7,19 +7,19 @@ using System.Web.Mvc;
 
 namespace MyFYP.WebUI.Controllers
 {
-    public class Basket : Controller
+    public class BasketController : Controller
     {
         IBasketService basketService;
 
-        public Basket(IBasketService BasketService)
+        public BasketController(IBasketService BasketService)
         {
             this.basketService = BasketService;
         }
+        // GET: Basket2
         public ActionResult Index()
         {
             var model = basketService.GetBasketItems(this.HttpContext);
-
-            return RedirectToAction("Index");
+            return View(model);
         }
 
         public ActionResult AddToBasket(string Id)
@@ -33,14 +33,14 @@ namespace MyFYP.WebUI.Controllers
         {
             basketService.RemoveFromBasket(this.HttpContext, Id);
 
-            return View();
+            return RedirectToAction("Index");
         }
 
-        public PartialViewResult BasketSummery()
+        public PartialViewResult BasketSummary()
         {
-            var basketSummery = basketService.GetBasketSummary(this.HttpContext);
+            var basketSummary = basketService.GetBasketSummary(this.HttpContext);
 
-            return PartialView(basketSummery);
+            return PartialView(basketSummary);
         }
     }
 }

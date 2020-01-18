@@ -10,7 +10,7 @@ namespace MyFYP.DataAccess.SQL
 {
     //Adapted from -https://www.udemy.com/course/better-web-development-pro-techniques-for-success/learn/lecture/8533944?start=975#overview
 
- 
+
     public class DataContext : DbContext
     {
         public DataContext()
@@ -24,6 +24,9 @@ namespace MyFYP.DataAccess.SQL
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<BasketItem> BasketItems { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems {get; set;}
+
     }
 }
 

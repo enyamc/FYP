@@ -1,4 +1,5 @@
-﻿using MyFYP.Core.Contracts;
+﻿//Adapted code repository skeleton from Bret Hargreaves (2019) https://github.com/completecoder/MyShop
+using MyFYP.Core.Contracts;
 using MyFYP.Core.Models;
 using System;
 using System.Collections.Generic;

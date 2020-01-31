@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Adapted code repository skeleton from Bret Hargreaves (2019) https://github.com/completecoder/MyShop
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,7 +13,7 @@ using MyFYP.DataAccess.InMemory;
 namespace MyFYP.WebUI.Controllers
 {
     //Adapted from -https://www.udemy.com/course/better-web-development-pro-techniques-for-success/learn/lecture/8533944?start=975#overview
-
+    [Authorize(Roles = "Admin")]
     public class ProductManagerController : Controller
     {
         

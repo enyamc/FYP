@@ -1,4 +1,5 @@
-﻿using MyFYP.Core.Contracts;
+﻿//Adapted code repository skeleton from Bret Hargreaves (2019) https://github.com/completecoder/MyShop
+using MyFYP.Core.Contracts;
 using MyFYP.Core.Models;
 using MyFYP.Core.ViewModels;
 using System;
@@ -34,5 +35,22 @@ namespace MyFYP.Services
             orderContext.Insert(baseOrder);
             orderContext.Comit();
         }
+
+        public List<Order> GetOrderList()
+        {
+            return orderContext.Collection().ToList();
+        }
+
+        public Order GetOrder(string Id)
+        {
+            return orderContext.Find(Id);
+        }
+
+        public void UpdateOrder(Order updatedOrder)
+        {
+            orderContext.Update(updatedOrder);
+            orderContext.Comit();
+        }
     }
 }
+

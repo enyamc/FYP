@@ -1,4 +1,5 @@
-﻿using MyFYP.Core.ViewModels;
+﻿//Adapted code repository skeleton from Bret Hargreaves (2019) https://github.com/completecoder/MyShop
+using MyFYP.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

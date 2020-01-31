@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿//Adapted code repository skeleton from Bret Hargreaves (2019) https://github.com/completecoder/MyShop
+using System.Linq;
 using MyFYP.Core.Models;
 
 namespace MyFYP.Core.Contracts

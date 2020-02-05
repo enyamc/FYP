@@ -13,7 +13,7 @@ using MyFYP.DataAccess.InMemory;
 namespace MyFYP.WebUI.Controllers
 {
     //Adapted from -https://www.udemy.com/course/better-web-development-pro-techniques-for-success/learn/lecture/8533944?start=975#overview
-    [Authorize(Roles = "Admin")]
+   
     public class ProductManagerController : Controller
     {
         

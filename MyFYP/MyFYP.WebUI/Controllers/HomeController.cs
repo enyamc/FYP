@@ -43,6 +43,13 @@ namespace MyFYP.WebUI.Controllers
             return View(model);
         }
 
+        [Authorize]
+        public ActionResult Donations(string Category = null)
+        {
+            List<Product> products = context.Collection().ToList();
+            return View(products);
+        }
+
         public ActionResult Details(string Id)
         {
             Product product = context.Find(Id);

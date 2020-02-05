@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace MyFYP.WebUI.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    
     public class OrderManagerController : Controller
     {
         IOrderService orderService;

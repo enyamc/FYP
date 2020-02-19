@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PayPal.Api;
 
 namespace MyFYP.WebUI.Controllers
 {
@@ -56,7 +57,7 @@ namespace MyFYP.WebUI.Controllers
 
             if (customer != null)
             {
-                Order order = new Order()
+                Core.Models.Order order = new Core.Models.Order()
                 {
                     Email = customer.Email,
                     City = customer.City,
@@ -78,7 +79,7 @@ namespace MyFYP.WebUI.Controllers
 
         [HttpPost]
         [Authorize]
-        public ActionResult Checkout(Order order)
+        public ActionResult Checkout(Core.Models.Order order)
         {
 
             var basketItems = basketService.GetBasketItems(this.HttpContext);
@@ -99,5 +100,15 @@ namespace MyFYP.WebUI.Controllers
             ViewBag.OrderId = OrderId;
             return View();
         }
+
+        //PayPal implementation
+
+        private Payment payment;
+
+        //Create a payment using an APIContext
+        //private Payment CreatePayment(APIContext apiContext, string redirectUrl)
+        //{
+
+        //}
     }
 }

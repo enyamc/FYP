@@ -14,5 +14,15 @@ namespace MyFYP.WebUI.Controllers
         {
             return View();
         }
+
+        public ActionResult StoreRegister()
+        {
+            return View();
+        }
+
+        public ActionResult RegistrationRequests()
+        {
+            return View();
+        }
     }
 }

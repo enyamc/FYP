@@ -43,6 +43,13 @@ namespace MyFYP.WebUI.Controllers
             return View(model);
         }
 
+        public ActionResult Chart(string Category = null)
+        {
+            List<ProductCategory> categories = productCategories.Collection().ToList();
+            return View(categories);
+
+        }
+
         [Authorize]
         public ActionResult Donations(string Category = null)
         {

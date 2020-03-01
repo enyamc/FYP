@@ -1,0 +1,186 @@
+﻿@model MyFYP.Core.Models.gmail
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width"/>
+    <title>Index</title>
+</head>
+<body>
+    <center>
+        <h2> Applications </h2>
+        <h4> Apply for Charity Status or to become one of our Partner Stores</h4>
+        <h5> Please indicate in the subject line what you are applying for</h5>
+    </center>
+   
+    <br/><br />
+
+
+    <div>
+        @using (Html.BeginForm("Index", "EmailSetup", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            
+
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class="col-md-2 control-label">Email</label>
+                        @Html.TextBoxFor(model => model.To, new { @class = "form-control" })
+
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-2 control-label">Subject</label>
+                        @Html.TextBoxFor(model => model.Subject, new { @class = "form-control" })
+                    </div>
+
+                    <br /><br /><br /><br />
+
+                    <div class="form-group col-md-6">
+                        <label class="col-md-2 control-label">Body</label>
+                        @Html.TextAreaFor(model => model.Body, new { @class = "form-control", @cols = 55, @rows = 15 }@*new { rows = "15", cols = "55" }*@)
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    
+                    <br />
+                    <br />
+                    <br />
+                    
+                    <br />
+                    <br />
+                   
+
+                    <div class="form-group col-md-6">
+                        <h5 style="color:red" class="col-md-8"> Please upload documentation to prove charity status: </h5>
+                    </div>
+
+                    <div class="form-group col-md-6 text-align: right">
+                        <label class="col-md-2 control-label">Upload</label>
+                        <label class="btn btn-default btn-file">
+                            Browse
+                            @Html.TextBoxFor(model => model.Attachment, new { type = "file", @style = "display:none" })
+                        </label>
+
+
+                    </div>
+
+                    @*<div class="form-group col-md-6">
+            <label class="col-md-2 custom-file-label">Upload</label>
+            @Html.TextBoxFor(model => model.Attachment, new { type = "file", @class = "form-control-file" })
+
+        </div>*@
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+
+
+
+                    <div class="form-group col-md-6">
+
+                        <label style="visibility:hidden" class="col-md-2 control-label">Continue </label>
+                        <label style="visibility:hidden" class="col-md-2 control-label">Continue </label>
+                        <label style="visibility:hidden" class="col-md-2 control-label">Continue </label>
+                        <input type="submit" class="btn btn-success" value="Send" />
+
+                    </div>
+                </div>
+</form>
+
+
+
+            @*<center>
+                    <h1> Registration As a Store or Charity</h1>
+                    <table>
+                        <tr>
+                            <td style="width: 80px">
+                                Email:
+                            </td>
+                            <td>@Html.TextBoxFor(model => model.To)</td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                @Html.LabelFor(model => model.Subject)
+                        </td>
+                        <td>
+                            <select id="Subject">
+                                <option value="CharityRequest">Charity Registration</option>
+                                <option value="StoreRequest">Store Registration</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            File Attachment:
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Attachment, new { type = "file" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            Body:
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Body)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Send" />
+                        </td>
+                        <td>@Html.TextAreaFor(model => model.Body, new { rows = "15", cols = "25" })</td>
+                    </tr>
+
+
+                </table>*@
+
+            <br />
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <span style="color:lavender">"@ViewBag.Message</span>
+
+        }
+    </div>
+
+
+</body>
+</html>

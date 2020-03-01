@@ -1,83 +1,117 @@
 ﻿@model MyFYP.WebUI.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Register For An Account";
 }
 
-<h2>@ViewBag.Title.</h2>
+<link href="~/Content/font-awesome-4.7.0/css/font-awesome.css" rel='stylesheet' type='text/css' />
+
+<centre>
+    <h2 align="center" style="color:red">@ViewBag.Title</h2>
+    @*<h1> <img src="/App_Start/Images/Logo.png" width="90"/></h1>*@
+</centre>
+
+
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
+
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
-        </div>
-    </div>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label class="col-md-2 control-label">Email</label>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+            <br />
+            <div class="form-group col-md-6" style="visibility:hidden">
+                <label class="col-md-2 control-label" style="visibility:hidden">Password</label>
+                @*@Html.PasswordFor(m => m.Password, new { @class = "form-control" })*@
+            </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
-        </div>
-    </div>
+            <div class="form-group col-md-6">
+                <label class="col-md-2 control-label">Password</label>
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Street, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Street, new { @class = "form-control" })
-        </div>
-    </div>
+            <div class="form-group col-md-6">
+                <label class="col-md-2 control-label">Confirm</label>
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.City, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
-        </div>
-    </div>
+            <div class="form-group col-md-6">
+                <label class="col-md-2 control-label">Name</label>
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.State, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.State, new { @class = "form-control" })
-        </div>
-    </div>
+            <div class="form-group col-md-6">
+                <label class="col-md-2 control-label">Surname</label>
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            </div>
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.ZipCode, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control" })
-        </div>
-    </div>
+            <div class="form-group col-md-6">
+                <label class="col-md-2 control-label">Street</label>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+                @Html.TextBoxFor(m => m.Street, new { @class = "form-control" })
+
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="col-md-2 control-label">City</label>
+
+                @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="col-md-2 control-label">County</label>
+
+                @Html.TextBoxFor(m => m.State, new { @class = "form-control" })
+
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="col-md-2 control-label">Eircode</label>
+
+                @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control" })
+
+            </div>
+
+            <div class="form-group col-md-6" style="visibility:hidden">
+
+                <input type="submit" class="btn btn-success" value="Register" />
+
+            </div>
+
+            <div class="form-group col-md-6">
+
+                <label style="visibility:hidden" class="col-md-2 control-label">Continue </label>
+                <input type="submit" class="btn btn-success" value="Register" />
+
+            </div>
         </div>
-    </div>
+    </form>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 }
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -3,14 +3,34 @@
     ViewBag.Title = "Home Page";
 }
 
-<h1>Products</h1>
+<br />
+<br />
+<br />
+
 
 <div class="col-md-2">
-    <h4>Filter by Category</h4>
-    <div class="list-group">
+    <br />
+    <br />
+    <br />
+    <div class="list-group-item" style="border:none">
         <!-- Inline if then statement for category null-->
         <!-- Create filter list with all category types apart from donations -->
-        @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item" })
+        @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item success" : "list-group-item" })
+        @foreach (var cat in Model.ProductCategories)
+
+        {
+            if (cat.Category != "Donations")
+            {
+                @Html.ActionLink(cat.Category, "Index", new { Category = cat.Category }, new { @class = Request["Category"] == cat.Category ? "list-group-item active" : "list-group-item" })
+            }
+        }
+
+    </div>
+
+    <div class="list-group-item" style="border:none">
+        <!-- Inline if then statement for category null-->
+        <!-- Create filter list with all category types apart from donations -->
+        @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item success" : "list-group-item" })
         @foreach (var cat in Model.ProductCategories)
 
         {
@@ -22,16 +42,31 @@
 
     </div>
 </div>
+
+
+
 <div class="col-md-10">
+    <form class="form-inline">
+        <div style="text-align: right;">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search Restaurants" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </div>
+
+    </form>
+</div>
+
+
+
+<div class="col-md-8">
     <!-- Iterate and display all items in DB except donations -->
     @foreach (var item in Model.Products)
     {
         if (item.Category != "Donations")
         {
 
-            <div class="col-md-4" style="height:450px;padding:10px;margin:10px;border: solid thin whitesmoke">
+            <div class="col-md-5" style="height:450px;padding:10px;margin:10px;border: solid thin whitesmoke">
                 <div class="col-md-12">
-                    <img class="img" style="height:250px" src="~/Content/ProductImages/@item.Image" />
+                    <img class="img-thumbnail" style="height:250px" src="~/Content/ProductImages/@item.Image" />
                 </div>
                 <div class="col-md-12">
                     <strong>@Html.ActionLink(item.Name, "Details", new { id = item.Id })</strong>
@@ -40,7 +75,8 @@
                     <p>@item.Description</p>
                 </div>
                 <div class="col-md-12">
-                    <h4>@item.Price</h4>
+                    
+                    <h4>€ @item.Price</h4>
                 </div>
                 <div class="col-md-12">
                     <a href="@Url.Action("AddToBasket", "Basket", new { Id = item.Id })" class="btn btn-default">Add to Basket</a>
@@ -53,6 +89,22 @@
 
 </div>
 
-    
-    <!-- Resets layout -->
-    <div class="col-md-12 clearfix" />
+
+
+<div class="col-sm-4" id="googleMap" style="width:50%;height:50px;"></div>
+
+@*<script>
+    function myMap() {
+        var mapProp = {
+            center: new google.maps.LatLng(51.508742, -0.120850),
+            zoom: 5,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?AIzaSyC8zpPSTgOuUeU0WEtl-TO3dvb1h4vILnc&callback=myMap"></script>*@
+
+
+<!-- Resets layout -->
+<div class="col-md-12 clearfix" />

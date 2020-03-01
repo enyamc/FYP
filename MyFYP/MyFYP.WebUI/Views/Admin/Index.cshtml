@@ -3,27 +3,35 @@
     ViewBag.Title = "Admin";
 }
 
-<h2>Admin Pages</h2>
+<br />
+<br />
+<br />
+
 
 <div class="col-md-6">
     <h4>Product Management</h4>
-    
+    <br />
+
     <div class="list-group">
         @Html.ActionLink("Product Categories", "Index", "ProductCategoryManager", null, new { @class = "list-group-item" })
-        @Html.ActionLink("Product", "Index", "ProductManager", null, new { @class = "list-group-item" })
+        <br />
+        <br />
+        <br />
+        @Html.ActionLink("Add Products", "Index", "ProductManager", null, new { @class = "list-group-item" })
     </div>
 </div>
 <div class="col-md-6">
     <h4>Order Management</h4>
+    <br />
     <div class="list-group">
         @Html.ActionLink("Orders", "Index", "OrderManager", null, new { @class = "list-group-item" })
     </div>
 </div>
 
 <div class="col-md-6">
-    <h4>Store Registration Requests</h4>
+    <h4>Analytics</h4>
     <div class="list-group">
-        @Html.ActionLink("Registrations", "RegistrationRequests", "Store", null, new { @class = "list-group-item" })
+        @Html.ActionLink("Analytics", "Analytics", "Admin", null, new { @class = "list-group-item" })
     </div>
 </div>
 

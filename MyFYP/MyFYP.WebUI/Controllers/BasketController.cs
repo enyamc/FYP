@@ -103,7 +103,7 @@ namespace MyFYP.WebUI.Controllers
 
         //PayPal implementation
 
-        private Payment payment;
+        //private Payment payment;
 
         //Create a payment using an APIContext
         //private Payment CreatePayment(APIContext apiContext, string redirectUrl)

@@ -1,0 +1,22 @@
+DEBUG 2020-02-19 23:47:22,781   200ms PayPalResource         onfigureAndExecute - Content-Type:application/x-www-form-urlencoded
+DEBUG 2020-02-19 23:47:22,891   309ms PayPalResource         onfigureAndExecute - User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.17763.0)
+DEBUG 2020-02-19 23:47:22,892   310ms PayPalResource         onfigureAndExecute - Authorization:Basic QWRoUU8tYndleHp0X1VuYVlmcmNEMFlZUng5M0s5TGozZ25GeTNkbXFxckZ6Mi1hSzIzR3p5NzFWRjRZU29Ub3M5QkR3TE92ZTJvY3RsM2U6RU9iRDhoVk1XaWdWTS1VcWdjRDVaOExMWnE3VjduaVFra1NXeHgyaDBBNjhvSmIteWRvUjhxbkxQTkEwX0hkUko0LW1DakF4V0t6eFczVFY=
+DEBUG 2020-02-19 23:47:22,893   311ms PayPalResource         onfigureAndExecute - PayPal-Request-Id:76e4f5f6-1b7e-413e-8fd5-4734ccf14fb7
+DEBUG 2020-02-19 23:47:23,176   594ms HttpConnection         Execute            - grant_type=client_credentials
+DEBUG 2020-02-19 23:47:24,228  1647ms HttpConnection         Execute            - Service response: 
+DEBUG 2020-02-19 23:47:24,230  1649ms HttpConnection         Execute            - {"scope":"https://uri.paypal.com/services/invoicing https://uri.paypal.com/services/disputes/read-buyer https://uri.paypal.com/services/payments/realtimepayment https://uri.paypal.com/services/disputes/update-seller https://uri.paypal.com/services/payments/payment/authcapture openid https://uri.paypal.com/services/disputes/read-seller https://uri.paypal.com/services/payments/refund https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/.* https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/applications/webhooks","access_token":"A21AAEK25o0jfSHE_mwZT17esUdpmou5r17StA2t0III_dmzWd-t68noi_SyCeDshBhv1rv4Yu16-zpuawX-2uOHyfO8pJILw","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":29701,"nonce":"2020-02-19T23:02:26ZuaDy6-7hiCLd8r7QSfvLVQMDfYBSUgex4_MlBWMAmHs"}
+DEBUG 2020-02-19 23:47:24,443  1861ms PayPalResource         onfigureAndExecute - Content-Type:application/json
+DEBUG 2020-02-19 23:47:24,444  1862ms PayPalResource         onfigureAndExecute - User-Agent:PayPalSDK/PayPal-NET-SDK 1.9.1 (lang=DOTNET;v=4.5.1;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.17763.0)
+DEBUG 2020-02-19 23:47:24,444  1862ms PayPalResource         onfigureAndExecute - Authorization:Bearer A21AAEK25o0jfSHE_mwZT17esUdpmou5r17StA2t0III_dmzWd-t68noi_SyCeDshBhv1rv4Yu16-zpuawX-2uOHyfO8pJILw
+DEBUG 2020-02-19 23:47:24,445  1863ms PayPalResource         onfigureAndExecute - PayPal-Request-Id:5297cfb6-68a0-4748-8309-1804a1073b07
+DEBUG 2020-02-19 23:47:24,445  1863ms HttpConnection         Execute            - {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"€0.00","details":{"subtotal":"€0.00","shipping":"0","tax":"0"}},"description":"Test transaction","invoice_number":"00000000-0000-0000-0000-000000000000","item_list":{"items":[]}}],"redirect_urls":{"return_url":"https://localhost:44354/Basket/PaymentWithPaypal?guid=00000000-0000-0000-0000-000000000000","cancel_url":"https://localhost:44354/Basket/PaymentWithPaypal?guid=00000000-0000-0000-0000-000000000000&Cancel=true"}}
+ERROR 2020-02-19 23:47:24,933  2352ms HttpConnection         Execute            - Error response:
+ERROR 2020-02-19 23:47:24,934  2352ms HttpConnection         Execute            - {"name":"VALIDATION_ERROR","message":"Invalid request - see details","debug_id":"dc5ca6fd12a4f","information_link":"https://developer.paypal.com/docs/api/payments/#errors","details":[{"field":"transactions.amount","location":"body","issue":"Cannot construct instance of `com.paypal.platform.payments.model.rest.common.Amount`, problem: INVALID_CURRENCY_AMOUNT_FORMAT"}]}
+ERROR 2020-02-19 23:47:24,936  2355ms HttpConnection         Execute            - The remote server returned an error: (400) Bad Request.
+ERROR 2020-02-19 23:47:24,980  2398ms PayPalException        LogMessage         - Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/payments/#errors
+   Debug ID: dc5ca6fd12a4f
+   Details:  transactions.amount -> Cannot construct instance of `com.paypal.platform.payments.model.rest.common.Amount`, problem: INVALID_CURRENCY_AMOUNT_FORMAT
+

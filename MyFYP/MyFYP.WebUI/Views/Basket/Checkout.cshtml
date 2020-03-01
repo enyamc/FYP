@@ -58,9 +58,18 @@
             </div>
         </div>
 
+        <!--https://stripe.com/docs/api-->
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Next" class="btn btn-default" />
+                @*<input type="submit" value="Next" class="btn btn-default" />*@
+                <script src="//checkout.stripe.com/v2/checkout.js"
+                        class="stripe-button"
+                        data-key="@ViewBag.StripePublishKey"
+                        data-locale="auto"
+                        data-description="Sample Charge"
+                        data-amount="350">
+                </script>
             </div>
         </div>
     </div>
@@ -68,4 +77,5 @@
 
 <div>
     @Html.ActionLink("Back to Basket", "Index")
+  
 </div>
